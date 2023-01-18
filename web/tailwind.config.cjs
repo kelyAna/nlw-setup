@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    './src/**/*.tsx',
+    './index.html'
   ],
   theme: {
     extend: {
@@ -10,9 +10,9 @@ module.exports = {
         background: '#09090A'
       },
 
-      gridTemplateColumns: {
-        7: 'repeat(7, minmax(0, 1fr))'
-      },
+      gridTemplateRows: {
+        7: 'repeat(7, minmax(0, 1fr))',
+      }
     },
   },
   plugins: [],
