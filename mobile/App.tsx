@@ -1,13 +1,13 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StatusBar } from "expo-status-bar"
 import {
   useFonts,
   Inter_400Regular,
   Inter_800ExtraBold,
   Inter_700Bold,
   Inter_600SemiBold,
-} from "@expo-google-fonts/inter";
-import { Loading } from "./src/components/Loading";
+} from "@expo-google-fonts/inter"
+import { Loading } from "./src/components/Loading"
+import { Home } from "./src/screens/Home"
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -17,28 +17,18 @@ export default function App() {
     Inter_800ExtraBold,
   })
 
-  if(!fontsLoaded) {
+  if (!fontsLoaded) {
     return <Loading />
   }
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Oi</Text>
-      <StatusBar bar-style="light-content" backgroundColor="transparent" translucent />
-    </View>
-  );
+    <>
+      <Home  />
+      <StatusBar
+        bar-style="light-content"
+        backgroundColor="transparent"
+        translucent
+      />
+    </>
+  )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "black",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-
-  text: {
-    color: "white",
-    fontFamily: 'Inter_800ExtraBold'
-  },
-});
