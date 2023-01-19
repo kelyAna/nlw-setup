@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
-import { New } from "../components/New"
+import { New } from "../screens/New"
 import { Habit } from "../screens/Habit"
 import { Home } from "../screens/Home"
 
