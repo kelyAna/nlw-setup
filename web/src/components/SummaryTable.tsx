@@ -15,7 +15,7 @@ export const SummaryTable = () => {
           return (
             <div
               key={`${weekDay}-${index}`}
-              className="text-white text-xl h-10 w-10 font-bold flex items-center justify-center"
+              className="text-violet-400 text-xl h-10 w-10 font-bold flex items-center justify-center"
             >
               {weekDay}
             </div>
@@ -25,7 +25,7 @@ export const SummaryTable = () => {
 
       <div className="grid grid-rows-7 grid-flow-col gap-3">
         {summaryDates.map((date) => {
-          return <HabitDay key={date.toString()} />
+          return <HabitDay key={date.toString()} completed={1} amount={0} />
         })}
 
         {
