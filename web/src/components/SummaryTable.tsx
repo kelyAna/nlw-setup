@@ -15,7 +15,7 @@ export const SummaryTable = () => {
           return (
             <div
               key={`${weekDay}-${index}`}
-              className="text-zinc-400 text-xl h-10 w-10 font-bold flex items-center justify-center"
+              className="text-white text-xl h-10 w-10 font-bold flex items-center justify-center"
             >
               {weekDay}
             </div>

@@ -8,9 +8,9 @@ export const Header = () => {
 
       <button
         type="button"
-        className="border border-violet-500 text-violet-400 font-semibold rounded-lg px-6 py-4 flex items-center gap-3 hover:border-violet-200"
+        className="font-semibold border rounded-lg px-6 py-4 flex items-center gap-3 hover:border-purple-400"
       >
-        <Plus className="text-violet-300" />
+        <Plus className="text-white" />
         Novo hábito
       </button>
     </div>
