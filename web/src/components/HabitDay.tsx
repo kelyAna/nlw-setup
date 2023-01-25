@@ -3,20 +3,37 @@ import clsx from 'clsx'
 import * as Checkbox from '@radix-ui/react-checkbox'
 import { ProgressBar } from './ProgressBar'
 import { Check } from 'phosphor-react'
+import { useState } from 'react'
+import dayjs from 'dayjs'
 
 interface HabitDayProps {
-  completed: number
-  amount: number
+  date: Date
+  defaultCompleted?: number
+  amount?: number
 }
 
-export const HabitDay = ({ completed, amount }: HabitDayProps) => {
-  const completedPercentage = Math.round((completed / amount) * 100)
+export const HabitDay = ({
+  defaultCompleted = 0,
+  amount = 0,
+  date,
+}: HabitDayProps) => {
+  const [completed, setCompleted] = useState(defaultCompleted)
+
+  const completedPercentage =
+    amount > 0 ? Math.round((completed / amount) * 100) : 0
+
+  const dayAndMonth = dayjs(date).format('DD/MM')
+  const dayOfWeek = dayjs(date).format('dddd')
+
+  function handleCompletedChaged(completed: number) {
+    setCompleted(completed)
+  }
 
   return (
     <Popover.Root>
       <Popover.Trigger
         className={clsx(
-          'w-10 h-10 bg-zinc-900 border-2 border-zinc-800 rounded-lg',
+          'w-10 h-10 bg-zinc-900 border-2 border-zinc-800 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-violet-600 focus:ring-offset-2 focus:ring-offset-background',
           {
             'bg-zinc-900 border-zinc-800': completedPercentage === 0,
             'bg-violet-900 border-violet-500':
@@ -34,9 +51,9 @@ export const HabitDay = ({ completed, amount }: HabitDayProps) => {
 
       <Popover.Portal>
         <Popover.Content className="min-w-[320px] p-6 rounded-2xl bg-zinc-900 flex flex-col">
-          <span className="font-semibold text-zinc-400">terça-feira</span>
+          <span className="font-semibold text-zinc-400">{dayOfWeek}</span>
           <span className="mt-1  text-zinc-400 font-extrabold leading-tight text-3xl">
-            17/01
+            {dayAndMonth}
           </span>
 
           <ProgressBar progress={completedPercentage} />

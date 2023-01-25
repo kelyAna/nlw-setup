@@ -3,10 +3,13 @@ import * as Dialog from '@radix-ui/react-dialog'
 
 import logoImg from '../assets/habits-logo.svg'
 import { NewHabitForm } from './NewHabitForm'
+import { ToastComponent } from './Toast'
 
 export const Header = () => {
   return (
     <div className="w-full max-w-3xl mx-auto flex items-center justify-between">
+      <ToastComponent />
+
       <img src={logoImg} alt="Habits" />
 
       <Dialog.Root>
