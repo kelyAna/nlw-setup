@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from "react"
 import {
   Alert,
   ScrollView,
@@ -6,11 +6,11 @@ import {
   TextInput,
   TouchableOpacity,
   View,
-} from "react-native";
-import colors from "tailwindcss/colors";
-import { BackButton } from "../components/BackButton";
-import { Checkbox } from "../components/CheckBox";
-import { api } from "../lib/axios";
+} from "react-native"
+import colors from "tailwindcss/colors"
+import { BackButton } from "../components/BackButton"
+import { Checkbox } from "../components/CheckBox"
+import { api } from "../lib/axios"
 
 const availableWeekDays = [
   "Domingo",
@@ -20,11 +20,11 @@ const availableWeekDays = [
   "Quinta-feira",
   "Sexta-feira",
   "Sábado",
-];
+]
 
 export function New() {
-  const [weekDays, setWeekDays] = useState<number[]>([]);
-  const [title, setTitle] = useState('');
+  const [weekDays, setWeekDays] = useState<number[]>([])
+  const [title, setTitle] = useState('')
 
   function handleToggleWeekDay(weekDayIndex: number) {
     if (weekDays.includes(weekDayIndex)) {
@@ -37,15 +37,15 @@ export function New() {
   async function handleCreateNewHabit() {
     try {
       if (!title.trim() || weekDays.length === 0) {
-        Alert.alert('Novo hábito', 'Informe o nome do hábito e escolha a periodicidade.')
+        return Alert.alert('Novo hábito', 'Informe o nome do hábito e escolha a periodicidade.')
       }
 
       await api.post('/habits', { title, weekDays })
       
-      setTitle('');
-      setWeekDays([]);
+      setTitle('')
+      setWeekDays([])
 
-      Alert.alert('Novo hábito', 'Hábito criado com sucesso!');
+      Alert.alert('Novo hábito', 'Hábito criado com sucesso!')
     } catch (error) {
       console.log(error)
       Alert.alert('Ops', 'Não foi possível criar o novo hábito')
@@ -97,5 +97,5 @@ export function New() {
         </TouchableOpacity>
       </ScrollView>
     </View>
-  );
+  )
 }
