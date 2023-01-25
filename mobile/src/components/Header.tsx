@@ -18,7 +18,7 @@ export function Header() {
       >
         <Feather name="plus" color={colors.white} size={20} />
         <Text className="text-white ml-3 font-semibold text-base">
-          Novo hábito
+          Criar novo hábito
         </Text>
       </TouchableOpacity>
     </View>

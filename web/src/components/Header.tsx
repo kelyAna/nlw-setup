@@ -15,10 +15,10 @@ export const Header = () => {
       <Dialog.Root>
         <Dialog.Trigger
           type="button"
-          className="border border-violet-500 font-semibold rounded-lg px-6 py-4 flex items-center gap-3 hover:border-violet-300 transition-colors focus:outline-none focus:ring-2 focus:ring-violet-600 focus:ring-offset-2 focus:ring-offset-background"
+          className="border border-violet-700 font-semibold rounded-lg px-6 py-4 flex items-center gap-3 bg-violet-800 hover:bg-violet-600 transition-colors focus:outline-none focus:ring-2 focus:ring-violet-600 focus:ring-offset-2 focus:ring-offset-background"
         >
           <Plus className="text-white" />
-          Novo hábito
+          Criar novo hábito
         </Dialog.Trigger>
 
         <Dialog.Portal>
@@ -28,7 +28,7 @@ export const Header = () => {
               <X size={24} aria-label="Fechar" />
             </Dialog.Close>
 
-            <Dialog.Title className="text-3xl leading-tight font-extrabold">
+            <Dialog.Title className="text-3xl text-zinc-300 leading-tight font-extrabold">
               Criar hábito
             </Dialog.Title>
 

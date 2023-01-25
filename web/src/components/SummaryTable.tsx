@@ -36,12 +36,12 @@ export const SummaryTable = () => {
 
   return (
     <div className="w-full flex">
-      <div className="grid grid-rows-8 grid-flow-row gap-3">
-        {weekDays.map((weekDay, index) => {
+      <div className="grid grid-rows-7 grid-flow-row gap-3">
+        {weekDays.map((weekDay, i) => {
           return (
             <div
-              key={`${weekDay}-${index}`}
-              className="text-zinc-300 text-xl h-10 w-14 font-bold flex items-center justify-center mr-7"
+              key={`${weekDay}-${i}`}
+              className="text-zinc-400 text-xl h-10 w-10 font-bold flex items-center justify-center mr-9"
             >
               {weekDay}
             </div>
