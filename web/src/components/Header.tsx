@@ -28,7 +28,7 @@ export const Header = () => {
               <X size={24} aria-label="Fechar" />
             </Dialog.Close>
 
-            <Dialog.Title className="text-3xl leading-tight font-extrabold">
+            <Dialog.Title className="text-3xl text-zinc-300 leading-tight font-extrabold">
               Criar hábito
             </Dialog.Title>
 

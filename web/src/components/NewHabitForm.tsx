@@ -3,7 +3,6 @@ import { Check } from 'phosphor-react'
 import { FormEvent, useState } from 'react'
 import toast from 'react-hot-toast'
 import { api } from '../lib/axios'
-import { ToastComponent } from './Toast'
 
 const availableWeekDays = [
   'Domingo',
@@ -91,9 +90,9 @@ export const NewHabitForm = (event: FormEvent) => {
 
         <button
           type="submit"
-          className="mt-6 rounded-lg p-4 flex items-center justify-center gap-3 font-semibold bg-green-600 hover:bg-green-500"
+          className="mt-6 rounded-lg p-4 flex items-center justify-center gap-3 font-semibold bg-green-700 hover:bg-green-600"
         >
-          Confirmar
+          Criar novo hábito
         </button>
       </form>
     </>
