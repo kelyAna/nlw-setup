@@ -92,7 +92,7 @@ export function New() {
           activeOpacity={0.7}
         >
           <Text className="font-semibold text-base text-white ml-2">
-            Confirmar
+            Criar hábito
           </Text>
         </TouchableOpacity>
       </ScrollView>
